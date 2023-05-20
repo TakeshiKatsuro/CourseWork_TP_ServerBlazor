@@ -15,11 +15,9 @@ namespace CourseWork_TP_ServerBlazor.Pages
 
         public IEnumerable<Employee> Employees { get; set; }
 
-        //protected override Task OnInitializedAsync()
         protected override async Task OnInitializedAsync()
         {
             Employees = (await EmployeeService.GetEmployees()).ToList();
-            //await Task.Run(LoadEmployees);
         }
     }
 }
