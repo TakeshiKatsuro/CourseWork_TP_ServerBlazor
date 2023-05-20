@@ -1,4 +1,5 @@
 using CourseWork_TP_ServerBlazor.Data;
+using EmployeeManagement.Api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -30,6 +31,10 @@ namespace CourseWork_TP_ServerBlazor
             services.AddRazorPages();
             services.AddServerSideBlazor(); //этот метод добавляет серверные службы Blazor
             services.AddSingleton<WeatherForecastService>();
+            services.AddHttpClient<IEmployeeService, EmployeeService>(client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:44322/");
+            });
         }
         // Этот метод вызывается средой выполнения. Используйте этот метод для настройки конвейера HTTP-запросов.
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
