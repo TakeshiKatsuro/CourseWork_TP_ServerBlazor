@@ -9,7 +9,7 @@ namespace EmployeeManagement.Api.Models
 {
     /*Чтобы класс DbContext мог выполнять какую-либо полезную работу, ему необходим экземпляр класса DbContextOptions.
     Экземпляр DbContextOptions содержит сведения о конфигурации, такие как строка подключения, используемый поставщик базы данных и т.д.
-    Мы передаем DbContextOptions в конструктор базового класса DbContext с помощью ключевого слова base, как показано ниже. */
+    Мы передаем DbContextOptions в конструктор базового класса DbContext с помощью ключевого слова base */
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)

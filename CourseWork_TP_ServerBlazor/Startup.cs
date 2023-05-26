@@ -1,4 +1,5 @@
 using CourseWork_TP_ServerBlazor.Data;
+using CourseWork_TP_ServerBlazor.Models;
 using EmployeeManagement.Api.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
@@ -35,6 +36,12 @@ namespace CourseWork_TP_ServerBlazor
             {
                 client.BaseAddress = new Uri("https://localhost:44322/");
             });
+            services.AddHttpClient<IDepartmentsService, DepartmentsService>(client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:44322/");
+            });
+
+            services.AddAutoMapper(typeof(EmployeeProfile));
         }
         // Этот метод вызывается средой выполнения. Используйте этот метод для настройки конвейера HTTP-запросов.
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
